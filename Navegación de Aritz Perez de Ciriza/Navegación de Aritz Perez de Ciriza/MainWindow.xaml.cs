@@ -25,7 +25,7 @@ namespace Navegacion_de_Aritz_Perez_de_Ciriza
             InitializeComponent();
         }
 
-        private void Boton1_Window1(object sender, RoutedEventArgs e)
+        private void Boton_Window1(object sender, RoutedEventArgs e)
         {
             Window1 AbrirVentana1 = new Window1();
             this.Close();
@@ -43,7 +43,7 @@ namespace Navegacion_de_Aritz_Perez_de_Ciriza
 
         }
 
-        private void Boton_salir(object sender, RoutedEventArgs e)
+        private void Boton_Salir(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }

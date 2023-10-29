@@ -24,5 +24,10 @@ namespace Navegación_de_Aritz_Perez_de_Ciriza
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -80,7 +80,7 @@
                         FontSize="20"
                         FontFamily="Montserrat"
                         Cursor="Hand"
-                        Click="Boton2_Window2"/>
+                        Click="Boton_Window2"/>
                 <Button Name="Boton3_MainWindow"
                         Content="Salir"
                         Height="150"

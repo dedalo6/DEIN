@@ -28,7 +28,7 @@
 
         <Image HorizontalAlignment="Left"
                Height="110" 
-               Margin="341, 132,0,0"
+               Margin="341,132,0,0"
                VerticalAlignment="Top" 
                Width="189" 
                Source="Images/WPF.png"/>
