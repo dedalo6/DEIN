@@ -1,0 +1,82 @@
+﻿<Window x:Class="Navegacion.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Navegación_de_Aritz_Perez_de_Ciriza"
+        mc:Ignorable="d"
+        Title="Window2" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/back-image.jpg" Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="10" BorderThickness="5" Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,2" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <TextBlock
+                    Text="VENTANA 2"
+                    Foreground="white"
+                    FontSize="40"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    HorizontalAlignment="Center"
+                    Margin="0,70,0,0"/>
+
+                <Button Name="Menu_principal"
+                            Content="Ir a Menu principal"
+                            Width="200"                
+                            Height="150"
+                            HorizontalAlignment="Left"
+                            Margin="50"
+                            VerticalAlignment="center"
+                            Background="Green"
+                            Foreground="LightGreen"
+                            FontSize="20"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Click="Mainwindow"/>
+
+
+                <Frame Name="MyFrame" 
+                       Content="Frame"
+                       HorizontalAlignment="Left" Height="286" Margin="288,172,0,0"
+                       VerticalAlignment="Top" Width="472"/>
+                <Button
+                        Content="Abrir Pagina 1"
+                        HorizontalAlignment="Left"
+                        Height="55" 
+                        Margin="50,400,0,0"
+                        VerticalAlignment="Top"
+                        Width="200"
+                        FontSize="20"
+                        FontFamily="Montserrat"
+                        Background ="DarkBlue"
+                        Foreground ="Cyan"
+                        Click="Boton2_AbrirPagina"/>
+            </Grid>
+        </Border>
+
+    </Border>
+</Window>
