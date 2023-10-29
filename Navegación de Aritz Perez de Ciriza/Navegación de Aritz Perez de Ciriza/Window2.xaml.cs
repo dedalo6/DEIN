@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Navegación_de_Aritz_Perez_de_Ciriza
+namespace Navegacion_de_Aritz_Perez_de_Ciriza
 {
     /// <summary>
     /// Lógica de interacción para Window2.xaml
