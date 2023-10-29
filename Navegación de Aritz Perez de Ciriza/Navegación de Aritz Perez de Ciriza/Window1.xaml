@@ -58,7 +58,7 @@
                         FontSize="26"
                         FontFamily="Montserrat"
                         Cursor="Hand"
-                        Click="Mainwindow" />
+                        Click="MainWindow" />
             </Grid>
 
         </Border>

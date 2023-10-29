@@ -56,7 +56,7 @@
                             FontSize="20"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Click="Mainwindow"/>
+                            Click="MainWindow"/>
 
 
                 <Frame Name="MyFrame" 
