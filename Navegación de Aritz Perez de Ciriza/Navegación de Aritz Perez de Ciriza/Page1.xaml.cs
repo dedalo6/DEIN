@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Navegación_de_Aritz_Perez_de_Ciriza
+namespace Navegacion_de_Aritz_Perez_de_Ciriza
 {
     /// <summary>
     /// Lógica de interacción para Page1.xaml
@@ -25,9 +25,9 @@ namespace Navegación_de_Aritz_Perez_de_Ciriza
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+        //private void InitializeComponent()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
