@@ -24,5 +24,6 @@ namespace Controles_de_Aritz_Perezde_Ciriza
         {
             InitializeComponent();
         }
+
     }
 }

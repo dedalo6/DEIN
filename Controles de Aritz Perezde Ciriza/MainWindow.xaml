@@ -5,11 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Controles_de_Aritz_Perezde_Ciriza"
         mc:Ignorable="d"
-        Title="Diseño de controles" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+        Title="Diseño de controles" Height="540" Width="960" Background="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.ColumnDefinitions/>
-        <TextBox x:Name="MiTextBlock" Margin="10" TextWrapping="Wrap" SpellCheck.IsEnabled="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+       
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="100"/>
+            <RowDefinition Height="auto"/>
             
+
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="MiTextBlock" Margin="10" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Width="Auto">
+            Escriba aquí...
         </TextBox>
+
+
+        <ComboBox Name="comboBox"  Grid.Column="1" Grid.Row="0" BorderThickness="1" Width="Auto">
+            <ComboBoxItem HorizontalAlignment="Left" Width="640" Height="150">
+                <StackPanel Orientation="Horizontal" Margin="10" >
+                    <Image Source="Imagenes/TheMagicians.jpg"/>
+                    <TextBlock FontSize="10" Margin="10" TextWrapping="Wrap">
+                        Jason Ralph, Olivia Taylor Dudley, Trevor Einhorn, Jade Tailor, Hale Appleman, Summer Bishil, Stella Maeve, Arjun Gupta
+                    </TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem HorizontalAlignment="Left" Width="640" Height="150">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Image Source="Imagenes/TheWire.jpg"/>
+                    <TextBlock FontSize="10" Margin="10">
+                        Dominic West <LineBreak/> Michael K. Williams <LineBreak/> Lance Reddick <LineBreak/> Idris Elba <LineBreak/> Jim True-Frost <LineBreak/>
+                        Clarke Peters <LineBreak/> Andre Royo
+                    </TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox >
+
+        <ListBox Name="listBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="37,29,23,31">
+            
+            <ListBoxItem HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="DAM 2ºB - Sistemas de Gestión Empresarial" FontSize="20" FontWeight="DemiBold" Foreground="Red" />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="15" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM 2ºB - Programación Multimedia Dispositivos Móviles" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="50" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM 2ºB  - Programación de Servicios y Procesos" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="20" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="2ºB DAM - Desarrollo de Interfaces" FontSize="20" FontWeight="DemiBold"/>
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0" Value="30" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM 2ºB - Inglés" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="15" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM 2ºB - Desarrollo Web" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="25" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM 2ºB - Empresa e iniciativa empresarial" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="25" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+            
+            <ListBoxItem HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DAM2B - Acceso a datos" FontSize="20" FontWeight="DemiBold"  />
+                    <ProgressBar Background="LightGray" Margin="10,0,0,0"  Value="80" Maximum="100" Height="20"  Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+
     </Grid>
 </Window>
