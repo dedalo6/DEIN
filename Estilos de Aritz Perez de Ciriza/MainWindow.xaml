@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Estilos_de_Aritz_Perez_de_Ciriza"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="976.531" Width="1446.278">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="147" />
