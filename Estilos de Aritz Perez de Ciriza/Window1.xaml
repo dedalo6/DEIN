@@ -140,7 +140,7 @@
             </Grid>
 
             <!-- Grid.2.1 -->
-            <StackPanel Style = "{StaticResource StackPanelStyle}" Grid.Column="1">
+            <StackPanel Style = "{StaticResource StackPanelStyle}" Grid.Column="1" Margin="0,0,0,78">
 
                 <TextBox Style="{StaticResource TextBoxStyle}"  Height="800" AcceptsReturn="True" Background="#ce9660">
                     <TextBox.Text>
