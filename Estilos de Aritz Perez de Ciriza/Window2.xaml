@@ -64,15 +64,18 @@
                 <RowDefinition Height="39"/>
             </Grid.RowDefinitions>
 
-            <Ellipse Width="100" Height="100"  Fill="Blue" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center"/>
+            <Button Click="ButtonMain_Click" Width="100" Height="100" Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center">
+                <Button.Content>
+                    <Image Source="images/logo.png" Width="100" Height="100" />
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource ButtonStyle}" Content="Mesas"  Grid.Row="1" Grid.Column="3" Click="ButtonMesas_Click"/>
 
-            <Button Style="{StaticResource ButtonStyle}" Content="Mesas"  Grid.Row="1" Grid.Column="3"/>
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Timetable" Grid.Row="1" Grid.Column="5" Click="ButtonTimetable_Click"/>
 
 
-            <Button Style="{StaticResource ButtonStyle}" Content="Timetable" Grid.Row="1" Grid.Column="5"/>
-
-
-            <Button Style="{StaticResource ButtonStyle}" Content="Recetas"  Grid.Row="1" Grid.Column="7"/>
+            <Button Style="{StaticResource ButtonStyle}" Content="Recetas"  Grid.Row="1" Grid.Column="7" Click="ButtonRecetas_Click"/>
 
 
             <Button Style="{StaticResource ButtonStyle}" Content="Texto"  Grid.Row="1" Grid.Column="9"/>
