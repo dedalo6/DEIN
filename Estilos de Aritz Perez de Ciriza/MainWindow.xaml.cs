@@ -24,5 +24,7 @@ namespace Estilos_de_Aritz_Perez_de_Ciriza
         {
             InitializeComponent();
         }
+
+        
     }
 }

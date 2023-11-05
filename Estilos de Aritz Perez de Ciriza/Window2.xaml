@@ -1,0 +1,146 @@
+﻿<Window x:Class="Estilos_de_Aritz_Perez_de_Ciriza.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Estilos_de_Aritz_Perez_de_Ciriza"
+        mc:Ignorable="d"
+        Title="Timatable" Height="976.531" Width="1446.278">
+
+    <Window.Resources>
+        <Style x:Key="DockPanelStyle" TargetType="DockPanel">
+            <Setter Property="Height" Value="800" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Background" Value="#ece38f" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="147" />
+            <RowDefinition Height="877" />
+        </Grid.RowDefinitions>
+
+        <!-- Grid.1.0 -->
+        <Grid Grid.Row="0">
+            <!--<Grid.Resources>
+                <Style TargetType="{x:Type Ellipse}">
+                    <Setter Property="Margin" Value="10,0,10,0" />
+                </Style>
+            </Grid.Resources>-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="39" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="39"/>
+            </Grid.RowDefinitions>
+
+            <Ellipse Width="100" Height="100"  Fill="Blue" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center"/>
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Mesas"  Grid.Row="1" Grid.Column="3"/>
+
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Timetable" Grid.Row="1" Grid.Column="5"/>
+
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Recetas"  Grid.Row="1" Grid.Column="7"/>
+
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Texto"  Grid.Row="1" Grid.Column="9"/>
+
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Texto"  Grid.Row="1" Grid.Column="19" />
+
+
+            <Button Style="{StaticResource ButtonStyle}" Content="Texto" Height="30" Background="Gray" Grid.Row="1" Grid.Column="21" VerticalAlignment="Center">
+
+            </Button>
+
+            <Rectangle Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="999" Fill="DarkGoldenrod"/>
+
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <StackPanel Style="{StaticResource StackPanelStyle}" Orientation="Horizontal" Margin="0,0,0,76">
+            <DockPanel Style = "{StaticResource DockPanelStyle}" Grid.Column="1">
+
+                <TextBox AcceptsReturn="True" Background="#ce9660" Margin="15
+                          ">
+                    <TextBox.Text>
+                        wertwer
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            <DockPanel Style = "{StaticResource DockPanelStyle}" Grid.Column="1">
+
+                <TextBox AcceptsReturn="True" Background="#ce9660" Margin="15
+                          ">
+                    <TextBox.Text>
+                        wertwer
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            <DockPanel Style = "{StaticResource DockPanelStyle}" Grid.Column="1">
+
+                <TextBox AcceptsReturn="True" Background="#ce9660" Margin="15
+                          ">
+                    <TextBox.Text>
+                        wertwer
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            <DockPanel Style = "{StaticResource DockPanelStyle}" Grid.Column="1">
+
+                <TextBox AcceptsReturn="True" Background="#ce9660" Margin="15
+                          ">
+                    <TextBox.Text>
+                        wertwer
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            <DockPanel Style = "{StaticResource DockPanelStyle}" Grid.Column="1">
+
+                <TextBox AcceptsReturn="True" Background="#ce9660" Margin="15
+                          ">
+                    <TextBox.Text>
+                        wertwer
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            </StackPanel>
+
+        </Grid>
+        
+    </Grid>  
+</Window>
+
+

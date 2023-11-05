@@ -1,12 +1,12 @@
-﻿<Window x:Class="Estilos_de_Aritz_Perez_de_Ciriza.MainWindow"
+﻿<Window x:Class="Estilos_de_Aritz_Perez_de_Ciriza.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Estilos_de_Aritz_Perez_de_Ciriza"
         mc:Ignorable="d"
-        Title="MainWindow" Height="976.531" Width="1446.278">
-    <Grid>
+        Title="Mesas" Height="976.531" Width="1446.278">
+    <Grid> 
         <Grid.RowDefinitions>
             <RowDefinition Height="147" />
             <RowDefinition Height="877" />
@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="20" /> 
+                <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="100" />
@@ -54,7 +54,7 @@
             </Grid.RowDefinitions>
 
             <Ellipse Width="100" Height="100"  Fill="Blue" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center"/>
-            
+
             <Button Style="{StaticResource ButtonStyle}" Content="Mesas"  Grid.Row="1" Grid.Column="3"/>
 
 
@@ -62,7 +62,7 @@
 
 
             <Button Style="{StaticResource ButtonStyle}" Content="Recetas"  Grid.Row="1" Grid.Column="7"/>
-   
+
 
             <Button Style="{StaticResource ButtonStyle}" Content="Texto"  Grid.Row="1" Grid.Column="9"/>
 
@@ -71,7 +71,7 @@
 
 
             <Button Style="{StaticResource ButtonStyle}" Content="Texto" Height="30" Background="Gray" Grid.Row="1" Grid.Column="21" VerticalAlignment="Center">
-               
+
             </Button>
 
             <Rectangle Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="999" Fill="DarkGoldenrod"/>
@@ -140,26 +140,25 @@
             </Grid>
 
             <!-- Grid.2.1 -->
-            <Grid Grid.Column="1" Margin="0,0,0,78">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <TextBox Style="{StaticResource TextBoxStyle}" Text="Instrucciones todo guapas" Grid.Row="1" Grid.Column="0" Height="100"/>
-                <TextBox Style="{StaticResource TextBoxStyle}" Text="Instrucciones todo guapas" Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" Height="300" />
-                <TextBox Style="{StaticResource TextBoxStyle}" Text="Instrucciones todo guapas" Grid.Row="7" Grid.Column="0"  Height="150"/>
+            <StackPanel Style = "{StaticResource StackPanelStyle}" Grid.Column="1">
+
+                <TextBox Style="{StaticResource TextBoxStyle}"  Height="800" AcceptsReturn="True" Background="#ce9660">
+                    <TextBox.Text>
+                        <!--No consigo que haga varias lineas-->
+                            MESA 1
+                        Entrantes
+                        asdas
+                        asdasdasdsdad
+                        asd
+                        
+                        
+                        asdddddddddddddddddddddddddddddddddddddddddd
+                    </TextBox.Text>
+                </TextBox>
                 
-            </Grid>
+
+            </StackPanel>
 
         </Grid>
     </Grid>
 </Window>
-
