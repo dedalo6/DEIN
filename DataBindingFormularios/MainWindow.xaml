@@ -1,9 +1,9 @@
-﻿<Window x:Class="Formulario de_Aritz Perez de Ciriza.MainWindow"
+﻿<Window x:Class="DataBindingFormularios.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Formulario_de_Aritz_Perez_de_Ciriza"
+        xmlns:local="clr-namespace:DataBindingFormularios"
         mc:Ignorable="d"
         Title="MainWindow" Height="1100" Width="800" >
     <Grid>

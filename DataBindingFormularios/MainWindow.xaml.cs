@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Formulario_de_Aritz_Perez_de_Ciriza
+namespace DataBindingFormularios
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
