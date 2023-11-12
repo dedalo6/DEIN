@@ -24,5 +24,18 @@ namespace Orla_Aritz_Perez_de_Ciriza
         {
             InitializeComponent();
         }
+
+        private void Persona(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Persona41_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Profile win2 = new Profile("Aritz ", "Perez de Ciriza Morillo", "correo@educacion.navarra.es", "Images/alumno13.jpg");
+
+            win2.Show();
+
+        }
     }
 }
