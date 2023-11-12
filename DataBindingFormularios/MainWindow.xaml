@@ -39,7 +39,7 @@
                 <ColumnDefinition Width="80*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Nombre*" Grid.Column="0" Name="label_nombre" />
-            <TextBox x:Name="box_nombre"  Grid.Column="1"  Height="20"   />
+            <TextBox x:Name="textBox_nombre"  Grid.Column="1"  Height="20"  Margin="0,2" />
         </Grid>
         <Grid  Grid.Row="2" Grid.Column="0" Margin="10,0">
             <Grid.ColumnDefinitions>
@@ -48,7 +48,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Apellidos*" Grid.Column="0" Name="label_apellidos"/>
-            <TextBox x:Name="box_apellidos"  Grid.Column="1" Height="20" />
+            <TextBox x:Name="textBox_apellidos"  Grid.Column="1" Height="20" />
 
         </Grid>
         <Grid  Grid.Row="3" Grid.Column="0" Margin="10,0">
@@ -58,7 +58,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="E-mail*" Grid.Column="0" Name="label_email"/>
-            <TextBox x:Name="box_email"  Grid.Column="1" Height="20" />
+            <TextBox x:Name="textBox_email"  Grid.Column="1" Height="20" Margin="0,2" />
 
         </Grid>
         <Grid  Grid.Row="4" Grid.Column="0" Margin="10,0" >
@@ -68,7 +68,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Teléfono*" Grid.Column="0" Name="label_telefono"/>
-            <TextBox x:Name="box_telefono"  Grid.Column="1" Height="20" Width="150" MaxWidth="150" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textBox_telefono"  Grid.Column="1" Height="20" Width="150" MaxWidth="150" HorizontalAlignment="Left"/>
 
         </Grid>
         <Grid  Grid.Row="5" Grid.Column="0" Margin="10,0" >
@@ -78,7 +78,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Fecha de nacimiento" Grid.Column="0" Name="label_fecha"/>
-            <DatePicker Grid.Column="1" Name="fecha_nacimiento"/>
+            <DatePicker Grid.Column="1" Name="fecha_nacimiento" Margin="0,2"/>
 
         </Grid>
         <Grid  Grid.Row="6" Grid.Column="0" Margin="15,0">
@@ -102,7 +102,7 @@
 
             <Label VerticalAlignment="Center" Content="Adjuntar fotografía" Grid.Column="0" Name="label_foto"/>
             <Button Grid.Column="1" Margin="10,0" Content="Cargar foto" Height="50" Width="100"  HorizontalAlignment="Left"  Click="button_Imagen_Click" />
-            <Image Grid.Column="2" Name="Image" Width="100" Height="100" HorizontalAlignment="Center" />
+            <Image Grid.Column="2" x:Name="Image" Width="100" Height="100" HorizontalAlignment="Center" />
 
         </Grid>
 
@@ -120,11 +120,12 @@
             </Grid.RowDefinitions>
 
             <Label Content="Domicilio" Grid.Row="0" Grid.Column="0" Name="label_domicilio"/>
-            <TextBox x:Name="box_direccion" Grid.Row="0" Grid.Column="1" Height="20" Text = "Dirección" GotFocus="gotFocus" LostFocus="Txt_lostFocus" />
-            <TextBox x:Name="box_ciudad" Grid.Row="1" Grid.Column="1" Height="20" Text="Ciudad" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="Txt_lostFocus" />
-            <TextBox x:Name="box_provincia" Grid.Row="2" Grid.Column="1" Height="20" Text="Provincia" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="Txt_lostFocus" />
-            <TextBox x:Name="box_codigo" Grid.Row="3" Grid.Column="1" Height="20" Text="Código Postal" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="Txt_lostFocus" />
-            <TextBox x:Name="box_pais" Grid.Row="4" Grid.Column="1" Height="20" Text="País"  Margin="0,3,0,3"  GotFocus="gotFocus" LostFocus="Txt_lostFocus" />
+
+            <TextBox x:Name="textBox_direccion" Grid.Row="0" Grid.Column="1" Height="20" Text = "Dirección" GotFocus="gotFocus" LostFocus="lostFocus" />
+            <TextBox x:Name="textBox_ciudad" Grid.Row="1" Grid.Column="1" Height="20" Text="Ciudad" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="lostFocus" />
+            <TextBox x:Name="textBox_provincia" Grid.Row="2" Grid.Column="1" Height="20" Text="Provincia" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="lostFocus" />
+            <TextBox x:Name="textBox_codigo" Grid.Row="3" Grid.Column="1" Height="20" Text="Código Postal" Margin="0,3,0,3" GotFocus="gotFocus" LostFocus="lostFocus" />
+            <TextBox x:Name="textBox_pais" Grid.Row="4" Grid.Column="1" Height="20" Text="País"  Margin="0,3,0,3"  GotFocus="gotFocus" LostFocus="lostFocus" />
 
         </Grid>
         <Image Source="/Images/companyLogo.jpg" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" Height="168" VerticalAlignment="Bottom" Margin="124,0,116,0"/>
@@ -154,13 +155,13 @@
         <TextBox x:Name="textBox_puesto" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Height="50" Margin="20,0,40,0"/>
         <Button x:Name="boton_guardar" Grid.Column="0" Grid.Row="13" Content="Guardar" HorizontalAlignment="Right" Height="40" Width="100" Margin="5,10" Click="button_guardar_Click" />
         <Button x:Name="boton_cancelar" Grid.Column="1" Grid.Row="13" Content="Cancelar" HorizontalAlignment="Left" Height="40" Width="100" Margin="5,10" Click="button_cancelar_Click"/>
-        <DataGrid x:Name="datagrid" Grid.Row="14" Grid.ColumnSpan="2" ItemsSource="{Binding}"  AutoGenerateColumns="False" Margin="20,0">
-            
+        <DataGrid x:Name="dataGrid" Grid.Row="14" Grid.ColumnSpan="2" AutoGenerateColumns="True" Margin="20,0" SelectionMode="Extended">
+            <!--No consigo que se actualice el DataGrid con los binding, asi que cargo una clase Empleado-->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre" Width="10*" Binding="{Binding nombre}"/>
-                <DataGridTextColumn Header="Apellidos" Width="40*" Binding="{Binding apellidos}"/>
-                <DataGridTextColumn Header="Email" Width="20*" Binding="{Binding email}"/>
-                <DataGridTextColumn Header="Teléfono" Width="10*" Binding="{Binding telefono}"/>
+                <DataGridTextColumn Header="Nombre" Width="10*" Binding="{Binding ElementName=textBox_nombre, Path=Text }"/>
+                <DataGridTextColumn Header="Apellidos" Width="40*" Binding="{Binding ElementName=textBox_apellidos, Path=Text}"/>
+                <DataGridTextColumn Header="Email" Width="20*" Binding="{Binding ElementName=textBox_email, Path=Text}"/>
+                <DataGridTextColumn Header="Teléfono" Width="10*" Binding="{Binding ElementName=textBox_telefono, Path=Text }"/>
             </DataGrid.Columns>
 
         </DataGrid>

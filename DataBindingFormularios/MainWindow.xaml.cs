@@ -24,21 +24,97 @@ namespace DataBindingFormularios
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
 
         }
 
         private void button_Imagen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png;*.bmp|Todos los archivos|*.*";
 
-            if (openFileDialog.ShowDialog() == true)
+
+
+            //openFileDialog.InitialDirectory = Environment.CurrentDirectory; //Con esto puedes saber donde esta ejecutandose el programa, desde que carpeta, que sera Debug o Realease
+            //openFileDialog.InitialDirectory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + "\\Images"; //Este monstruo funciona
+
+
+            //IMPORTANTE: ESTA ES LA MANERA DE USAR PATHS System.IO.Path, Si pones solo Path. Estas usando una infernal clase que solo sirve PARA LIAR y para hacer lineas y curvas
+
+            openFileDialog.InitialDirectory = System.IO.Path.GetFullPath("..\\..\\Images");  //Con esto salimos dos carpetas hacia fuera desde Debug o Release y llegamos a la carpeta que contiene Images
+            // No podia ser tan facil como poner la ruta y ya esta, no, claro que no!
+
+            openFileDialog.FilterIndex = 1;
+            //Resumen:
+            //     Obtiene o establece el índice del filtro que está seleccionado en un cuadro de
+            //     diálogo de archivo.
+            //
+            // Devuelve:
+            //     El System.Int32 que es el índice del filtro seleccionado. El valor predeterminado
+            //     es 1.
+            openFileDialog.Multiselect = false;
+            // Resumen:
+            //     Obtiene o establece un valor que indica si la casilla de verificación de sólo
+            //     lectura se muestran por Microsoft.Win32.OpenFileDialog está seleccionada.
+            //
+            // Devuelve:
+            //     true Si la casilla de verificación está seleccionada; de lo contrario, false.
+            //     De manera predeterminada, es false.
+
+
+
+
+            openFileDialog.Filter = "Archivos de Imagen|*.jpg;*.png;*.jpeg;|Todos los archivos|*.*";
+            // Resumen: (public string Filter { get; set; })
+            //     Obtiene o establece la cadena de filtro que determina qué tipos de archivo se
+            //     muestran desde Microsoft.Win32.OpenFileDialog o Microsoft.Win32.SaveFileDialog.
+            //
+            // Devuelve:
+            //     Un objeto System.String que contiene el filtro. El valor predeterminado es System.String.Empty,
+            //     que indica que no se aplica ningún filtro y que se muestran todos los tipos de
+            //     archivo.
+            //
+            // Excepciones:
+            //   T:System.ArgumentException:
+            //     La cadena de filtro no es válida.
+
+
+            if ((bool)openFileDialog.ShowDialog())
+            //
+            // Resumen:
+            //     Muestra un cuadro de diálogo común.
+            //
+            // Parámetros:
+            //   owner:
+            //     Identificador de la ventana que posee el cuadro de diálogo.
+            //
+            // Devuelve:
+            //     Si el usuario hace clic en el botón Aceptar del cuadro de diálogo que aparece
+            //     (por ejemplo, Microsoft.Win32.OpenFileDialog, Microsoft.Win32.SaveFileDialog),
+            //     true devuelto; de lo contrario, false.
             {
                 string rutaImagen = openFileDialog.FileName;
+                //
+                // Resumen:
+                //     Obtiene una matriz que contiene un nombre de archivo seguro de cada archivo seleccionado.
+                //
+                // Devuelve:
+                //     Una matriz de System.String que contiene un nombre de archivo seguro de cada
+                //     archivo seleccionado. El valor predeterminado es una matriz con un elemento único
+                //     cuyo valor es System.String.Empty.
 
-                // Cargar la imagen seleccionada en el control Image
-                BitmapImage imagenBitmap = new BitmapImage(new Uri(rutaImagen));
-                Image.Source = imagenBitmap;
+
+
+                //BitmapImage imagenBitmap = new BitmapImage(new Uri(rutaImagen), new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.CacheOnly));
+                
+                BitmapImage imagenBitmap = new BitmapImage();
+                imagenBitmap.BeginInit(); //Pedimos que pare el inicio para que nos deje establecer la uri
+                imagenBitmap.UriSource = new Uri(rutaImagen); // Le indicamos la ruta hacia la imagen que hemos conseguido con openFileDialog.FileName
+                imagenBitmap.DecodePixelWidth = 80;// Con esto la imagen no se deformara por minimizarla
+                imagenBitmap.DecodePixelHeight = 100;
+                imagenBitmap.EndInit(); //Le decimos que termine el inicio
+                Image.Source = imagenBitmap; 
+
+          
             }
         }
 
@@ -54,28 +130,28 @@ namespace DataBindingFormularios
         {
 
 
-            if (box_nombre.Text == "")
+            if (textBox_nombre.Text == "")
             {
                 MessageBox.Show("El campo Nombre no puede estar vacío", "Error");
             }
-            else if (box_apellidos.Text == "")
+            else if (textBox_apellidos.Text == "")
             {
                 MessageBox.Show("El campo Apellidos no puede estar vacío", "Error");
             }
-            else if (box_email.Text == "")
+            else if (textBox_email.Text == "")
             {
                 MessageBox.Show("El campo E-mail no puede estar vacío", "Error");
             }
-            else if (box_telefono.Text == "")
+            else if (textBox_telefono.Text == "")
             {
                 MessageBox.Show("El campo Teléfono no puede estar vacío", "Error");
             }
             else
             {
-                Empleado nuevoEmpleado = new Empleado(box_nombre.Text, box_apellidos.Text, box_email.Text, box_telefono.Text);
+                Empleado nuevoEmpleado = new Empleado(textBox_nombre.Text, textBox_apellidos.Text, textBox_email.Text, textBox_telefono.Text);
+                dataGrid.Items.Add(nuevoEmpleado);
 
 
-                datagrid.Items.Add(nuevoEmpleado);
             }
 
 
@@ -115,26 +191,26 @@ namespace DataBindingFormularios
             }
         }
 
-        private void Txt_lostFocus(object sender, RoutedEventArgs e)
+        private void lostFocus(object sender, RoutedEventArgs e)
         {
-            if (sender is TextBox textbox)
+            if (sender is TextBox textBox)
             {
-                if (String.IsNullOrWhiteSpace(textbox.Text))
+                if (String.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    if (textbox.Name == "box_direccion")
+                    if (textBox.Name == "textBox_direccion")
                     {
-                        textbox.Text = "Dirección";
+                        textBox.Text = "Dirección";
                     }
-                    else if (textbox.Name == "box_ciudad")
+                    else if (textBox.Name == "textBox_ciudad")
                     {
-                        textbox.Text = "Ciudad";
+                        textBox.Text = "Ciudad";
                     }
-                    else if (textbox.Name == "box_provincia")
-                        textbox.Text = "Provincia";
-                    else if (textbox.Name == "box_codigo")
-                        textbox.Text = "Código Postal";
-                    else if (textbox.Name == "box_pais")
-                        textbox.Text = "País";
+                    else if (textBox.Name == "textBox_provincia")
+                        textBox.Text = "Provincia";
+                    else if (textBox.Name == "textBox_codigo")
+                        textBox.Text = "Código Postal";
+                    else if (textBox.Name == "textBox_pais")
+                        textBox.Text = "País";
                 }
             }
         }
