@@ -1,0 +1,16 @@
+﻿<Window x:Class="Orla_Aritz_Perez_de_Ciriza.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Orla_Aritz_Perez_de_Ciriza"
+        mc:Ignorable="d"
+        Title="Orla: Aritz Perez de Ciriza" 
+        Height="800" Width="600"
+        MinHeight="800" MaxHeight="1920" MaxWidth="1080"
+        Icon="/Images/anuario.png"
+        Background="#F49d6E">
+    <Grid>
+        
+    </Grid>
+</Window>
