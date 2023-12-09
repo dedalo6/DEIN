@@ -1,0 +1,23 @@
+﻿<Window x:Class="GestionEmpleados2023.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEmpleados2023"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" Text="Departamento RRHH" FontSize="24" FontWeight="DemiBold"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"  >
+            <Button Grid.Row="1"  x:Name="btnLista" Margin="10,0,30,100" Content="Lista de Empleados" VerticalAlignment="Center" Width="160" Height="75" Click="listaEmpleadosClick"></Button>
+            <Button Grid.Row="1"  x:Name="btnAgregar" Margin="10,0,30,100" Content="Agregar Empleados" VerticalAlignment="Center" Width="160" Height="75" Click="agregarEmpleadosClick"></Button>
+            <Button Grid.Row="1"  x:Name="btnBuscar" Margin="30,0,30,100" Content="Buscar Empleados" VerticalAlignment="Center" Width="160" Height="75" Click="buscarEmpleadosClick"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

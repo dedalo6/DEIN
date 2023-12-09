@@ -1,0 +1,36 @@
+﻿<Window x:Class="GestionEmpleados2023.AgregarEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEmpleados2023"
+        mc:Ignorable="d"
+        Title="AgregarEmpleado" Height="400" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom" >
+            <TextBlock Height="20" Text="Nombre:" Margin="25,0,0,0"></TextBlock>
+            <TextBox x:Name="txtNombre" Text="" Width="300" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" >
+            <TextBlock Height="20" Text="Apellidos:" Margin="25,0,0,0"></TextBlock>
+            <TextBox x:Name="txtApellidos" Text="" Width="300" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom" >
+            <TextBlock Height="20" Text="EsUsuario:" Margin="25,0,0,0"></TextBlock>
+            <CheckBox x:Name="esUsuarioCheckBox" Margin="25,0,0,0"></CheckBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Margin="0,10,0,0" Orientation="Vertical" VerticalAlignment="Top" >
+            <TextBlock Height="20" Text="Edad:" Margin="25,0,0,0"></TextBlock>
+            <TextBox x:Name="txtEdad" Text="" Width="300" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+            <Button  Width="300" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left" Content="Agregar Empleado" Click="agregarEmpleado_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

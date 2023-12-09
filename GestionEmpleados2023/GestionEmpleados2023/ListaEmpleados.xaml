@@ -1,0 +1,24 @@
+﻿<Window x:Class="GestionEmpleados2023.ListaEmpleados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEmpleados2023"
+        mc:Ignorable="d"
+        Title="ListaEmpleados" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"  TextAlignment="Center" VerticalAlignment="Center" Text="Listado de Empleados" FontSize="20" FontWeight="DemiBold"/>
+        <Button Grid.Row="0" Height="25" Width="150" Content="Eliminar Empleado" Margin="0,100,0,0" Click="eliminarEmpleadoClick"></Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"  >
+            <DataGrid x:Name="miDataGrid" AutoGenerateColumns="True" Width="506" Margin="0,0,0,116" />
+        </StackPanel>
+        <Button Grid.Row="1" Height="25" Width="150" Content="Main" Margin="0,100,0,0" Click="irAMainClick"></Button>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="GestionEmpleados2023.BuscarEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEmpleados2023"
+        mc:Ignorable="d"
+        Title="BuscarEmpleado" Height="700" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"  TextAlignment="Center" VerticalAlignment="Center" Text="Busqueda y Edicion de Empleados" FontSize="20" FontWeight="DemiBold"/>
+        <WrapPanel Grid.Row="1" Orientation="Vertical" Height="200" >
+            <StackPanel Orientation="Vertical">
+                <TextBlock Height="20" Text="Nombre:" Margin="25,0,0,0"></TextBlock>
+                <TextBox x:Name="txtNombre" Text="" Width="169" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <RadioButton x:Name="rbNombreOr" Content="OR" />
+                    <RadioButton x:Name="rbNombreAnd" Content="AND" Margin="10,0,0,0" IsChecked="True" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Height="20" Text="Apellidos:" Margin="25,0,0,0"></TextBlock>
+                <TextBox x:Name="txtApellidos" Text="" Width="169" Height="20" Margin="20,0,0,0" HorizontalAlignment="Left"></TextBox>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <RadioButton x:Name="rbApellidosOr" Content="OR" />
+                    <RadioButton x:Name="rbApellidosAnd" Content="AND" Margin="10,0,0,0" IsChecked="True" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel  Orientation="Vertical" VerticalAlignment="Bottom" >
+                <TextBlock x:Name="esUsuarioTextBlock" Height="20" Text="EsUsuario:" Margin="25,0,0,0" />
+                <CheckBox x:Name="esUsuarioCheckBox" Margin="25,0,0,0" />
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <RadioButton x:Name="rbActivateEsUsuario" Content="Activate" Checked="RadioButtonActivate_Checked" GroupName="esUsuarioGroup" />
+                    <RadioButton x:Name="rbDeactivateEsUsuario" Content="Deactivate" Checked="RadioButtonDeactivate_Checked" GroupName="esUsuarioGroup" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="100,30,0,0">
+                <Button Height="60" Width="180" Content="Buscar" Click="buscarEmpleadoClick" />
+                <Button Height="60" Width="180" Content="Editar" Click="editarEmpleadoClick" />
+            </StackPanel>
+            <StackPanel Margin="10,0,0,0">
+                <TextBlock Width="550" TextWrapping="WrapWithOverflow" Text="Instrucciones para Buscar. Si AND esta seleccionado hace una busqueda normal de los empleados con los campos coincidentes. Si se elige OR, se permite la busqueda de varios valores, para ese campo, separandolos por comas. Ejemplo: Nombre = Juan, Maria Apellidos = Perez, Gomez buscará empleados que se llamen Juan o Maria Y que se apelliden Perez o Gomez" FontSize="15" />
+                <TextBlock Margin="0,10,0,0" Width="550" TextWrapping="WrapWithOverflow" Text="Instrucciones para Editar. Una vez buscado un empleado, podemos editar sus valores, Nombre, Apellidos y EsUsuario. Para ello hay que escribir los nuevos valores en las cajas de texto correspondientes y seleccionar en el DataGrid el empleado que se quiere editar. Luego click en Editar" FontSize="15" />
+            </StackPanel>
+            
+        </WrapPanel>
+        
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center"  >
+            <TextBlock x:Name="laConsulta" Text=" - Aquí aparecerá la consulta - " Margin="0,0,0,10" FontSize="15" />
+            <DataGrid x:Name="miDataGrid" AutoGenerateColumns="True" Width="506" Height="171" />
+        </StackPanel>
+        <Button Grid.Row="2" Height="25" Width="150" Content="Main" Margin="0,180,0,0" Click="irAMainClick"></Button>
+
+
+    </Grid>
+</Window>
